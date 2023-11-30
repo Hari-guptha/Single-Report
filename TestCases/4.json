@@ -1,0 +1,43 @@
+{
+    "testCases": [
+        {
+            "messages": [
+                {
+                    "input": "I want to enroll in autopay",
+                    "output": [
+                        {
+                            "contains": "Awesome! In order to enroll you in autopay, I will need you to <b>select</b> which of your policies you would like to enroll.\na) Home\nb) Auto\n"
+                        }
+                    ]
+                },
+                {
+                    "input": "home",
+                    "output": [
+                        {
+                            "contains": "ok we have your home policy 123 is this the policy you would like to enroll in autopay"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes",
+                    "output": [
+                        {
+                            "contains": "Would you like to use a bank account, a debit card or credit card?\na) Debit Card\nb) Credit Card\nc) Bank Account\n"
+                        }
+                    ]
+                },
+                {
+                    "input": "Debit Card",
+                    "output": [
+                        {
+                            "contains": "Your <b> Home policy </b> has been enrolled in automatic monthly payments."
+                        },
+                        {
+                            "contains":"I help you with?"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

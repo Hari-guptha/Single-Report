@@ -1,0 +1,36 @@
+{
+    "testCases": [
+        {
+            "messages": [
+                {
+                    "input": "What’s my claim status",
+                    "output": [
+                        {
+                            "contains": "We  are currently processing your auto claim ending in 1456."
+                        },{
+                            "contains":"{&quot;type&quot;:&quot;template&quot;,&quot;payload&quot;:{&quot;template_type&quot;:&quot;listView&quot;,&quot;seeMore&quot;:false,&quot;moreCount&quot;:4,&quot;text&quot;:&quot;Please find your recent claims&quot;,&quot;heading&quot;:&quot;Speed Analysis&quot;,&quot;buttons&quot;:[{&quot;title&quot;:&quot;See more&quot;,&quot;type&quot;:&quot;postback&quot;,&quot;payload&quot;:&quot;payload&quot;}],&quot;elements&quot;:[{&quot;title&quot;:&quot;Glass&quot;,&quot;subtitle&quot;:&quot;Status:Under Process, Date:12/18/2021&quot;,&quot;value&quot;:&quot;771456&quot;,&quot;default_action&quot;:{&quot;title&quot;:&quot;Glass&quot;,&quot;type&quot;:&quot;web_url&quot;,&quot;url&quot;:&quot;https://csaa-insurance.aaa.com/content/aaa-ie/b2c/en/homepage.html/&quot;}},{&quot;title&quot;:&quot;Roadside Assistance&quot;,&quot;subtitle&quot;:&quot;Status:Settled, Date:4/27/2021&quot;,&quot;value&quot;:&quot;771458&quot;,&quot;default_action&quot;:{&quot;title&quot;:&quot;Roadside Assistance&quot;,&quot;type&quot;:&quot;web_url&quot;,&quot;url&quot;:&quot;https://csaa-insurance.aaa.com/content/aaa-ie/b2c/en/homepage.html/&quot;}},{&quot;title&quot;:&quot;Collision&quot;,&quot;subtitle&quot;:&quot;Status:Settled, Date:1/24/2021&quot;,&quot;value&quot;:&quot;771457&quot;,&quot;default_action&quot;:{&quot;title&quot;:&quot;Collision&quot;,&quot;type&quot;:&quot;web_url&quot;,&quot;url&quot;:&quot;https://csaa-insurance.aaa.com/content/aaa-ie/b2c/en/homepage.html/&quot;}}],&quot;moreData&quot;:{&quot;Tab1&quot;:[],&quot;Tab2&quot;:[]}}}"
+                        },{
+                            "contains":"the payment will be sent directly to the repair shop and is scheduled to be paid on 12 14 2023 would you like any further information regarding this claim\n"
+                        }
+                    ]
+                },
+                {
+                    "input": "No",
+                    "output": [
+                        {
+                            "contains": "help you with?"
+                        }
+                    ]
+                },
+                {
+                    "input": "I'm good thank you",
+                    "output": [
+                        {
+                            "contains": "always happy to help"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

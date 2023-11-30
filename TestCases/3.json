@@ -1,0 +1,55 @@
+{
+    "testCases": [
+        {
+            "messages": [
+                {
+                    "input": "I want to make a payment on my home insurance",
+                    "output": [
+                        {
+                            "contains": "Ok, Would   you like to use your card on file ending in 6582?"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes",
+                    "output": [
+                        {
+                            "contains": " great you have requested to pay 125 on your home policy using visa card ending in 6523 would you like to make this payment"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes",
+                    "output": [
+                        {
+                            "contains": "Your payment has been *confirmed*. It should post within 24 hours."
+                        },
+                        {
+                            "contains":"Would you like to setup auto-pay for your home policy number ending in 0423 using your card ending in 6582?"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes",
+                    "output": [
+                        {
+                            "contains": "Great, your auto pay will take place for the billing cycle & is scheduled to draft the 10th of every month."
+                        },
+                        {
+                            "contains":"help you with?"
+                        }
+                    ]
+                }
+                ,
+                {
+                    "input": "I'm good thank you",
+                    "output": [
+                        {
+                            "contains": "Always happy to help!"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
