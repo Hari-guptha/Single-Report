@@ -1,18 +1,17 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const config = require('./Config')
 
-const apiUrl = config.apiUrl;
-const authToken = config.authToken
-const testFile = config.numberofUsecase
+const testFile = process.env.numberofUsecase.split(',')
 let currentTestIndex = 0;
+let user = "U1"
 
 
 const axiosInstance = axios.create({
-    baseURL: apiUrl,
+    baseURL: process.env.apiUrl,
     headers: {
-        Authorization: `Bearer ${authToken}`
+        Authorization: `Bearer ${process.env.authToken}`
     }
 });
 
@@ -26,9 +25,14 @@ function loadTestCase() {
 
 // Message comparison function
 function messageCompare(actual, expected) {
-    if (actual.type === "text") {
-        actual = actual.val.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
-        expected = expected.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+    if (actual.type === "text" || actual.type === "template") {
+        if (actual.type === "template") {
+            actual = actual.val.text.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+            expected = expected.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+        } else {
+            actual = actual.val.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+            expected = expected.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+        }
         // console.log("Actual:", actual + '\n');
         // console.log("Expected:", expected + '\n');
         const expectedWords = expected.split(' ');
@@ -49,6 +53,7 @@ function messageCompare(actual, expected) {
         return true;
     }
 }
+
 
 // Main function to handle responses and messages
 async function handleResponse(response, expectedMessages, counter) {
@@ -84,11 +89,11 @@ async function sendMessage(message, expected, counter) {
             val: message
         },
         from: {
-            id: 'U12345',
+            id: user,
             userInfo: {
-                firstName: config.firstName,
-                lastName: config.lastName,
-                email: config.email
+                firstName: process.env.firstName,
+                lastName: process.env.lastName,
+                email: process.env.email
             }
         },
         mergeIdentity: true
@@ -114,6 +119,7 @@ async function runTests() {
         console.log('All test cases have been completed' + '\n');
         setTimeout(() => {
             currentTestIndex = 0;
+            user = "U1" + Math.floor(1000 + Math.random() * 9000); 
             runTests();
         }, 120000);  // Run the loop after 2 minutes
     }

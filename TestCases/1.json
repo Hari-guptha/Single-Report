@@ -3,17 +3,14 @@
         {
             "messages": [
                 {
-                    "input": "How do I add a vehicle to my policy?",
+                    "input": "hi",
                     "output": [
                         {
-                            "contains": "Our  Services can help take care of your most common insurance transactions, with no login required, including adding a vehicle without having to remember your USER ID and password. You can also use the GEICO mobile app to manage your policy."
-                        },
-                        {
-                            "contains": "help you with?"
+                            "contains":" "
                         }
                     ]
                 }
             ]
         }
     ]
-}
+}  
