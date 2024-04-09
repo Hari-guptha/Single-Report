@@ -36,7 +36,7 @@
                     "input": "yes, it's white",
                     "output": [
                         {
-                            "contains": "One moment while I run a quick diagnostic check."
+                            "contains": "One  moment while I run a quick diagnostic check."
                         },
                         {
                             "contains":"I have run a quick diagnostic check, and the best way for me to resolve this is for me to issue a hard reboot of your modem. Your internet will be available in roughly 5 minutes after reboot and the indicator light should be solid white. May I go ahead and perform the hard reboot on your device?"

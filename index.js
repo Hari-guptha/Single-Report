@@ -47,8 +47,8 @@ function messageCompare(actual, expected) {
             actual = actual.val.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
             expected = expected.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
         }
-        // console.log("Actual:", actual + '\n');
-        // console.log("Expected:", expected + '\n');
+        console.log("Actual:", actual + '\n');
+        console.log("Expected:", expected + '\n');
         const expectedWords = expected.split(' ');
         const foundAllWords = expectedWords.every(word => actual.includes(word));
         if (foundAllWords) {
