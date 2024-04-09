@@ -3,17 +3,66 @@
         {
             "messages": [
                 {
-                    "input": "How will I know when my promotional rate ends?",
+                    "input": "My internet is super slow",
                     "output": [
                         {
-                            "contains": "in the month prior to your promotional rate ending we ll include a reminder in the spectrum news section of your bill"
+                            "contains": "I'm sorry to hear that you are having issues with your internet connection. Let's dig in and see what's going on."
                         },
                         {
-                            "contains": "help you with?"
+                            "contains":"For security purposes, can you please confirm the  address associated with your account?"
+                        }
+                    ]
+                },
+                {
+                    "input": "it's wilson.smith@gmail.com",
+                    "output": [
+                        {
+                            "contains": "Thanks for that. Can you also provide me your 4-digit PIN?"
+                        }
+                    ]
+                },
+                {
+                    "input": "9134",
+                    "output": [
+                        {
+                            "contains": "One moment while I check your account."
+                        },
+                        {
+                            "contains":"0K. It looks like you are on our fastest Gig Ethernet plan, and should not be having slow internet Issues. Can you check the lights on your modem? Is it solid white?"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes, it's white",
+                    "output": [
+                        {
+                            "contains": "One moment while I run a quick diagnostic check."
+                        },
+                        {
+                            "contains":"I have run a quick diagnostic check, and the best way for me to resolve this is for me to issue a hard reboot of your modem. Your internet will be available in roughly 5 minutes after reboot and the indicator light should be solid white. May I go ahead and perform the hard reboot on your device?"
+                        }
+                    ]
+                }
+                ,
+                {
+                    "input": "sure",
+                    "output": [
+                        {
+                            "contains": "I see we have a mobile number on file for you. Would you like me to send you a text message in about 5 minutes to make sure everything is working fine?"
+                        }
+                    ]
+                },
+                {
+                    "input": "yes, that would be great",
+                    "output": [
+                        {
+                            "contains": "We'll go ahead and send that messag shortly. Simply reply to that message to confirm your internet is working, or if additional action is needed we can assist you via text."
+                        },{
+                            "contains": "Is there anything else I can help you with today?"
                         }
                     ]
                 }
             ]
         }
     ]
-}  
+}

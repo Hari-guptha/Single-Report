@@ -5,7 +5,21 @@ const axios = require('axios');
 
 const testFile = process.env.numberofUsecase.split(',')
 let currentTestIndex = 0;
-let user = "U1"
+let user = " "
+
+function generateUniqueString() {
+    let uniqueString = "";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    do {
+        uniqueString = "";
+        for (let i = 0; i < 6; i++) {
+            uniqueString += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+    } while (!/^[^0-9]+$/.test(uniqueString)); 
+
+    return uniqueString;
+}
 
 
 const axiosInstance = axios.create({
@@ -100,6 +114,7 @@ async function sendMessage(message, expected, counter) {
     };
     try {
         const response = await axiosInstance.post('', requestData);
+        // console.log(response)
         await handleResponse(response, expected, counter);
     } catch (error) {
         console.error('Error:', error);
@@ -119,9 +134,9 @@ async function runTests() {
         console.log('All test cases have been completed' + '\n');
         setTimeout(() => {
             currentTestIndex = 0;
-            user = "U1" + Math.floor(1000 + Math.random() * 9000); 
+            user = "U1i" + generateUniqueString();
             runTests();
-        }, 120000);  // Run the loop after 2 minutes
+        }, 0);  // Run the loop after 2 minutes
     }
 }
 

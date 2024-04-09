@@ -6,7 +6,7 @@
                     "input": "hi",
                     "output": [
                         {
-                            "contains":" "
+                            "contains": " "
                         }
                     ]
                 }
